@@ -1,0 +1,3 @@
+# This was initially empty.
+# tcp     /usr/lib/postfix/dict_tcp.so            dict_tcp_open
+# sqlite  /usr/lib/postfix/dict_sqlite.so         dict_sqlite_open

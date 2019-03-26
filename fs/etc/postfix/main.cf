@@ -1,0 +1,36 @@
+# General options.
+authorized_submit_users = static:all
+biff = no
+header_size_limit = 4096000
+alias_maps = hash:/etc/postfix/aliases
+compatibility_level = 2
+smtputf8_enable = no
+append_at_myorigin = yes
+myorigin = $mydomain
+mydomain =
+
+# Interface binding, and authorized networks.
+inet_interfaces = all
+mynetworks = 127.0.0.0/8,192.168.99.0/24,172.16.0.0/12,10.0.0.0/8
+
+# SMTP server configuration.
+smtpd_banner = Tencent Africa
+smtpd_delay_reject = yes
+smtpd_use_tls = no
+
+# Message manipulation.
+smtp_header_checks = regexp:/etc/postfix/smtp_header_checks
+
+# Sender manipulation.
+sender_canonical_maps = regexp:/etc/postfix/sender_canonical_maps
+
+# Relay configuration.
+relayhost =
+smtpd_relay_restrictions = permit_mynetworks,reject
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_password
+smtp_sasl_security_options = noanonymous
+smtp_tls_security_level = may
+
+# Recipient configuration.
+transport_maps = hash:/etc/postfix/transport_maps
