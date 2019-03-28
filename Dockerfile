@@ -22,4 +22,4 @@ RUN chown -R root:root /etc/postfix && \
     chmod 0755 /var/spool/postfix/pid
 
 EXPOSE 25
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
